@@ -1,0 +1,68 @@
+package Week1;
+
+import java.util.Scanner;
+
+public class Calculation {
+    private int firstNumber=0;
+    private int secondNumber=0;
+    private Calculation(int firstNumber,int secondNumber){
+        this.firstNumber=firstNumber;
+        this.secondNumber=secondNumber;
+    }
+
+    public static Calculation createCalculation(int firstNumber,int secondNumber){
+        return new Calculation(firstNumber,secondNumber);
+    }
+
+    public int getFirstNumber() {
+        return firstNumber;
+    }
+
+    public void setFirstNumber(int firstNumber) {
+        this.firstNumber = firstNumber;
+    }
+
+    public int getSecondNumber() {
+        return secondNumber;
+    }
+
+    public void setSecondNumber(int secondNumber) {
+        this.secondNumber = secondNumber;
+    }
+
+    public int addition(){
+        return firstNumber+secondNumber;
+    }
+
+    public int subtraction(){
+        return firstNumber-secondNumber;
+    }
+
+    public int multiplication(){
+        return firstNumber*secondNumber;
+    }
+
+    public int dividing(){
+        return firstNumber/secondNumber;
+    }
+
+    public void output(){
+        Calculation calculation=new Calculation(80,20);
+        System.out.println(calculation.addition());
+        System.out.println(calculation.subtraction());
+        System.out.println(calculation.multiplication());
+        System.out.println(calculation.dividing());
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print ("İkinci Sayiyi giriniz=");
+        int ikinci = input.nextInt();
+
+        Calculation calculation2=new Calculation(20,ikinci);
+        System.out.println(calculation2.addition());
+        System.out.println(calculation2.subtraction());
+        System.out.println(calculation2.multiplication());
+        System.out.println(calculation2.dividing());
+    }
+
+}
